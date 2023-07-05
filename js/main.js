@@ -16,6 +16,10 @@ btnInvia.addEventListener("click", function () {
     switch (mail) {
       case arrayMail[i]:
         console.log("la mail " + arrayMail[i] + " è autorizzata all'accesso");
+        alert('MAIL AUTORIZZATA');
+        break;
+      default:
+        console.log('MAIL NON AUTORIZZATA!!!');
         break;
     }
   }
