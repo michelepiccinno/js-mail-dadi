@@ -88,3 +88,4 @@ btnInviaGame.addEventListener("click", function () {
     document.getElementById("msg-game-result").innerHTML = "IL GIOCATORE HA VINTO !"
   }
 })
+
