@@ -19,18 +19,44 @@
 
 <body>
   <main>
-    <div class="container">
-      <div class="row justify-content-center ">
-        <div class="col-6 p-5">
-          <div class="d-flex flex-wrap justify-content-center">
-            <label for="my-mail" class="form-label">Inserisci la tua mail: </label>
-            <input type="text" class="form-control m-5" name="mail" id="my-mail">
-            <button class="btn btn-primary invia-dati">Invia</button>
+    <section class="m-5">
+      <h1 class="text-center">TEST MAIL ARRAY</h1>
+      <div class="container">
+        <div class="row justify-content-center ">
+          <div class="col-9 p-5">
+            <div class="d-flex flex-wrap justify-content-center">
+              <label for="my-mail" class="form-label">Inserisci la tua mail: </label>
+              <input type="text" class="form-control m-5" name="mail" id="my-mail">
+              <button class="btn btn-primary invia-dati-mail">Invia</button>
+            </div>
+            <div class="box-msg-status m-2">
+              <h4 id="output-msg" class="text-center"></h4>
+            </div>
           </div>
-          <h4 id="output-msg"></h4>
         </div>
       </div>
-    </div>
+    </section>
+    <section class="m-5">
+      <h1 class="text-center">TEST DICE GAME</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-9 p-5">
+            <div>
+              <button class="btn btn-primary invia-dati-game">GIOCA</button>
+              <div>
+                <span>Computer: </span>
+                <span id="A-dice-value"></span>
+              </div>
+              <div>
+                <span>Giocatore: </span>
+                <span id="B-dice-value"></span>
+              </div>
+              <h3 id="msg-game-result"></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <script src="js/main.js"></script>
 </body>
