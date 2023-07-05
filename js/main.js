@@ -1,5 +1,5 @@
 //CREO UN ARRAY CONTENENTE UN ELENCO DI INDIRIZZI E-MAIL
-const arrayMail = ["mario@google.it", "luca@google.it", "davide@google.it", "grazia@google.it"]
+const arrayMail = ["mario@gmail.com", "luca@gmail.com", "angelo@gmail.com", "grazia@gmail.com"]
 
 //RECUPERO GLI ELEMENTI HTML INPUT E BUTTON
 const mailInputElement = document.querySelector("[name='mail']");
@@ -11,17 +11,25 @@ btnInvia.addEventListener("click", function () {
   // PRELEVO IL CONTENUTO INSERITO NELL'INPUT E LO ASSEGNO ALLA CONST MAIL
   const mail = mailInputElement.value;
 
+  //IMPOSTO UNA VARIABILE CHE MI INDICA LO STATO DELL'AUTORIZZAZIONE ALL'ACCESSO
+  let authorization = false;
+
   //IMPOSTO UN CICLO PER LEGGERE TUTTI GLI ELEMENTI DELL'ARRAY
-  for (let i = 0; i < arrayMail.length; i++) {
+  for (i = 0; i < arrayMail.length; i++) {
     switch (mail) {
       case arrayMail[i]:
-        console.log("la mail " + arrayMail[i] + " è autorizzata all'accesso");
-        alert('MAIL AUTORIZZATA');
-        break;
-      default:
-        console.log('MAIL NON AUTORIZZATA!!!');
+        console.log('AUTORIZZATO!!!');
+        authorization = true;
+        //CAMBIO FORZATAMENTE IL VALORE DEL CONTATORE PER USCIRE DAL CICLO
+        i = arrayMail.length;
         break;
     }
   }
-})
 
+  //IN BASE ALLO STATO (true-false) DELLA VARIABILE "authorization" INVIO MESSAGGIO DI STATO
+  if (authorization == true) {
+    document.getElementById("output-msg").innerHTML = "MAIL AUTORIZZATA!!!"
+  } else {
+    document.getElementById("output-msg").innerHTML = "MAIL NON AUTORIZZATA!!!"
+  }
+})
