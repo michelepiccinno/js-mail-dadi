@@ -21,9 +21,13 @@ btnInvia.addEventListener("click", function () {
     switch (mail) {
       case arrayMail[i]:
         authorization = true;
-        //CAMBIO FORZATAMENTE IL VALORE DEL CONTATORE PER USCIRE DAL CICLO
-        i = arrayMail.length;
-        break;
+      //CAMBIO FORZATAMENTE IL VALORE DEL CONTATORE PER USCIRE DAL CICLO
+      //i = arrayMail.length;
+    }
+    //ALTERNATIVA PROBABILMENTE PIU' GIUSTA PER USCIRE DAL CICLO
+    //FUORI DALLO SWITCH MA DENTRO AL CICLO IMPOSTO:
+    if (authorization == true) {
+      break;
     }
   }
 
@@ -40,7 +44,7 @@ btnInvia.addEventListener("click", function () {
 })
 
 
-/*QUESTO ERA UN TEST PER LA CREAZIONE DI DEL H4 TRAMITE JS
+/*QUESTO ERA UN TEST PER LA CREAZIONE DEL H4 TRAMITE JS
   //RICHIAMO IL CONTAINER div class .box-msg-status
   const boxMsgStatus = document.querySelector(".box-msg-status");
   //CREO UN ELEMENTO VIRTUALE H4 CHE CONTERRA' IL MESSAGGIO IN OUTPUT
